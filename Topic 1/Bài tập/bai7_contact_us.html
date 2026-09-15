@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 7: Biểu mẫu Contact Us (Giao diện Teal Hiện đại)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 30px;
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+    .contact-card {
+      background: #ffffff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 1px solid #e0e0e0;
+    }
+    .contact-header {
+      background-color: #34d399; /* Màu xanh ngọc teal như hình */
+      color: #ffffff;
+      text-align: center;
+      padding: 16px 20px;
+    }
+    .contact-header h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .contact-body {
+      padding: 24px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus,
+    textarea:focus {
+      border-color: #34d399;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .btn-send {
+      width: 100%;
+      background-color: #34d399;
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn-send:hover {
+      background-color: #10b981;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-card">
+    <div class="contact-header">
+      <h2>Contact Us</h2>
+    </div>
+    
+    <div class="contact-body">
+      <form action="#" method="post">
+        
+        <div class="form-group">
+          <input type="text" name="user_name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="user_email" placeholder="Email Address" required>
+        </div>
+
+        <div class="form-group">
+          <textarea name="user_message" placeholder="Type your Message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-send">Send</button>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

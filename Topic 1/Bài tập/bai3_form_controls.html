@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 3: Các bộ điều khiển Form HTML5 (HTML5 Form Controls)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 24px;
+      max-width: 650px;
+      margin: 0 auto;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    td {
+      padding: 6px 8px;
+      vertical-align: middle;
+    }
+    td:first-child {
+      width: 170px;
+      font-weight: 500;
+      color: #222;
+    }
+    input[type="text"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="month"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"] {
+      padding: 5px 8px;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      width: 250px;
+      font-size: 14px;
+    }
+    input[type="color"] {
+      width: 60px;
+      height: 30px;
+      border: 1px solid #777;
+      cursor: pointer;
+    }
+    input[type="range"] {
+      width: 250px;
+    }
+    .highlight-input {
+      border: 2px solid #d9534f !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <form action="#" method="get">
+      <table>
+        <tr>
+          <td><label for="color">Select Color:</label></td>
+          <td><input type="color" id="color" name="color" value="#000000"></td>
+        </tr>
+        <tr>
+          <td><label for="date">Select Date:</label></td>
+          <td><input type="date" id="date" name="date"></td>
+        </tr>
+        <tr>
+          <td><label for="datetime">Date &amp; Time:</label></td>
+          <td><input type="datetime" id="datetime" name="datetime"></td>
+        </tr>
+        <tr>
+          <td><label for="datetime-local">Local Date &amp; Time:</label></td>
+          <td><input type="datetime-local" id="datetime-local" name="datetime_local"></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email Address:</label></td>
+          <td><input type="email" id="email" name="email"></td>
+        </tr>
+        <tr>
+          <td><label for="month">Select Month:</label></td>
+          <td><input type="month" id="month" name="month"></td>
+        </tr>
+        <tr>
+          <td><label for="num1">Select Number:</label></td>
+          <td><input type="number" id="num1" name="number_input" value="1"></td>
+        </tr>
+        <tr>
+          <td><label for="range1">Select Number:</label></td>
+          <td><input type="range" id="range1" name="range_input" min="0" max="100" value="50"></td>
+        </tr>
+        <tr>
+          <td><label for="search">Search Website:</label></td>
+          <td><input type="search" id="search" name="search"></td>
+        </tr>
+        <tr>
+          <td><label for="tel">Telephone Number:</label></td>
+          <td><input type="tel" id="tel" name="telephone"></td>
+        </tr>
+        <tr>
+          <td><label for="time">Select Time:</label></td>
+          <td><input type="time" id="time" name="time"></td>
+        </tr>
+        <tr>
+          <td><label for="url">Website URL:</label></td>
+          <td><input type="url" id="url" name="url" class="highlight-input"></td>
+        </tr>
+        <tr>
+          <td><label for="week">Select Week:</label></td>
+          <td><input type="week" id="week" name="week"></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+</body>
+</html>

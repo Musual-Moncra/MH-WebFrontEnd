@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 1 - Tổng hợp Bài tập thực hành HTML5 & CSS</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f8fafc;
+      color: #1e293b;
+      margin: 0;
+      padding: 30px 20px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      padding: 32px 28px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 14px rgba(30, 58, 138, 0.2);
+    }
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 28px;
+    }
+    header p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 22px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      border-color: #93c5fd;
+    }
+    .card h3 {
+      margin: 0 0 10px 0;
+      color: #1d4ed8;
+      font-size: 18px;
+    }
+    .card p {
+      margin: 0 0 16px 0;
+      color: #64748b;
+      font-size: 14px;
+      flex-grow: 1;
+    }
+    .btn {
+      display: inline-block;
+      text-align: center;
+      background-color: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+    .btn:hover {
+      background-color: #1d4ed8;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>📚 Topic 1: Tổng Hợp Bài Tập Thực Hành HTML5</h1>
+      <p>Môn học: Phát Triển Web Front-End (SW306DV01) — Đại học Hoa Sen</p>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <div>
+          <span class="badge">Bài 1</span>
+          <h3>Thẻ Code &amp; Công thức</h3>
+          <p>Thực hành thẻ mã máy tính (code, kbd, samp, var), công thức hóa học/vật lý (sub, sup), thẻ address.</p>
+        </div>
+        <a href="bai1_text_formula.html" class="btn" target="_blank">Xem giao diện &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Bài 2</span>
+          <h3>To Do List &amp; Cuộn</h3>
+          <p>Danh sách việc cần làm có gạch ngang/gạch chân, input chọn tuần (week), khối scrollbox chứa thông tin tác giả.</p>
+        </div>
+        <a href="bai2_todo_list.html" class="btn" target="_blank">Xem giao diện &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Bài 3</span>
+          <h3>Form Controls HTML5</h3>
+          <p>Tổng hợp 13 kiểu input mới trong HTML5: color, date, time, datetime-local, email, month, number, range, search, tel, url, week.</p>
+        </div>
+        <a href="bai3_form_controls.html" class="btn" target="_blank">Xem giao diện &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Bài 4</span>
+          <h3>Optgroup &amp; Fieldset</h3>
+          <p>Dropdown gom nhóm theo hãng xe, listbox chọn nhiều (multiple), fieldset Hobbies (checkbox) và Gender (radio).</p>
+        </div>
+        <a href="bai4_select_optgroup.html" class="btn" target="_blank">Xem giao diện &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Bài 5</span>
+          <h3>Order &amp; Delivery Form</h3>
+          <p>Biểu mẫu đặt hàng toàn diện kết hợp validation HTML5: required, min, max, step (10cm, 30 phút), color picker, tìm kiếm.</p>
+        </div>
+        <a href="bai5_order_form.html" class="btn" target="_blank">Xem giao diện &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Bài 6</span>
+          <h3>Feedback / Contact Form</h3>
+          <p>Biểu mẫu liên hệ/quảng cáo với trường First/Last name, required email, dropdown chủ đề và textarea nội dung.</p>
+        </div>
+        <a href="bai6_feedback_form.html" class="btn" target="_blank">Xem giao diện &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Bài 7</span>
+          <h3>Modern Contact Us Card</h3>
+          <p>Thẻ liên hệ phong cách hiện đại với thanh tiêu đề màu xanh ngọc (teal), các trường nhập liệu bo tròn và nút Send full-width.</p>
+        </div>
+        <a href="bai7_contact_us.html" class="btn" target="_blank">Xem giao diện &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Bài 8</span>
+          <h3>Semantic Layout Website</h3>
+          <p>Dàn trang bố cục web chuẩn ngữ nghĩa HTML5 (header, nav sidebar, main content, footer) phỏng theo mẫu Tutorial Republic.</p>
+        </div>
+        <a href="bai8_semantic_layout.html" class="btn" target="_blank">Xem giao diện &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
