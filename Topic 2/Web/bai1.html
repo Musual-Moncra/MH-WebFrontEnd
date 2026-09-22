@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1 - Giỏ hàng SessionStorage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: inline-block;
+            width: 120px;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Thêm sản phẩm vào giỏ hàng</h2>
+    <div class="form-group">
+        <label for="productId">Mã sản phẩm:</label>
+        <input type="text" id="productId">
+    </div>
+    <div class="form-group">
+        <label for="productName">Tên sản phẩm:</label>
+        <input type="text" id="productName">
+    </div>
+    <div class="form-group">
+        <label for="quantity">Số lượng:</label>
+        <input type="number" id="quantity" min="1" value="1">
+    </div>
+    <div class="form-group">
+        <label for="price">Giá:</label>
+        <input type="number" id="price" min="0" value="0">
+    </div>
+    <button onclick="addToCart()">Thêm giỏ hàng</button>
+
+    <div class="result-box">
+        <p>Tổng sản phẩm: <span id="totalQuantity">0</span></p>
+        <p>Tổng tiền: <span id="totalPrice">0</span></p>
+    </div>
+
+    <h3>Chi tiết giỏ hàng</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody id="cartTableBody"></tbody>
+    </table>
+
+    <script>
+        // Lấy giỏ hàng từ sessionStorage
+        function getCart() {
+            var cart = sessionStorage.getItem('cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        // Cập nhật giao diện và tính tổng
+        function renderCart() {
+            var cart = getCart();
+            var totalQty = 0;
+            var totalPrice = 0;
+            var tableBody = document.getElementById('cartTableBody');
+            tableBody.innerHTML = '';
+
+            cart.forEach(function (item) {
+                var itemTotal = item.quantity * item.price;
+                totalQty += item.quantity;
+                totalPrice += itemTotal;
+
+                var row = `<tr>
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.price}</td>
+                    <td>${itemTotal}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+
+            document.getElementById('totalQuantity').innerText = totalQty;
+            document.getElementById('totalPrice').innerText = totalPrice;
+        }
+
+        // Thêm sản phẩm vào giỏ hàng
+        function addToCart() {
+            var id = document.getElementById('productId').value.trim();
+            var name = document.getElementById('productName').value.trim();
+            var quantity = parseInt(document.getElementById('quantity').value, 10);
+            var price = parseFloat(document.getElementById('price').value);
+
+            if (!id || !name || isNaN(quantity) || isNaN(price)) {
+                alert('Vui lòng nhập đầy đủ thông tin hợp lệ!');
+                return;
+            }
+
+            var cart = getCart();
+            // Kiểm tra nếu sản phẩm đã tồn tại thì cộng dồn số lượng
+            var existingIndex = cart.findIndex(function (item) { return item.id === id; });
+
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += quantity;
+            } else {
+                cart.push({ id: id, name: name, quantity: quantity, price: price });
+            }
+
+            // Lưu mảng giỏ hàng mới vào sessionStorage
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+
+            // Hiển thị lại giao diện
+            renderCart();
+
+            // Xóa rỗng form nhập
+            document.getElementById('productId').value = '';
+            document.getElementById('productName').value = '';
+            document.getElementById('quantity').value = '1';
+            document.getElementById('price').value = '0';
+        }
+
+        // Hiển thị dữ liệu ngay khi tải trang (nếu đã lưu trong session trước đó)
+        window.onload = renderCart;
+    </script>
+</body>
+
+</html>

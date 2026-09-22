@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2 - Web Worker HTML5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .input-group label {
+            display: inline-block;
+            width: 80px;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="input-group">
+        <label for="num1">number 1:</label>
+        <input type="number" id="num1" value="7">
+    </div>
+    <div class="input-group">
+        <label for="num2">number 2:</label>
+        <input type="number" id="num2" value="8">
+    </div>
+
+    <button onclick="startWorker()">Add</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+
+    <div id="result">Kết quả: Chưa chạy</div>
+
+    <script>
+        var w = undefined;
+
+        function startWorker() {
+            var n1 = document.getElementById('num1').value;
+            var n2 = document.getElementById('num2').value;
+
+            if (n1 === "" || n2 === "") {
+                alert("Vui lòng nhập đủ cả hai số!");
+                return;
+            }
+
+            // Kiểm tra trình duyệt có hỗ trợ Web Worker không
+            if (typeof (Worker) !== "undefined") {
+                // Hủy worker cũ nếu đang chạy trước khi tạo cái mới
+                if (typeof (w) !== "undefined") {
+                    w.terminate();
+                }
+
+                // Khởi tạo Worker
+                w = new Worker("worker.js");
+
+                // Gửi dữ liệu number 1 và number 2 qua worker
+                w.postMessage({ num1: n1, num2: n2 });
+
+                // Lắng nghe dữ liệu worker gửi về
+                w.onmessage = function (event) {
+                    document.getElementById("result").innerText = "Kết quả: " + event.data;
+                };
+            } else {
+                document.getElementById("result").innerText = "Trình duyệt không hỗ trợ Web Worker!";
+            }
+        }
+
+        function stopWorker() {
+            if (typeof (w) !== "undefined") {
+                // Dừng tiến trình worker
+                w.terminate();
+                w = undefined;
+                alert("Đã dừng Worker!");
+            }
+        }
+    </script>
+</body>
+
+</html>

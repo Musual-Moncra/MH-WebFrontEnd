@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "5a2d5978f2b1cde9",
+        "id": "db22134b50914cea",
         "type": "tabs",
         "children": [
           {
-            "id": "8604f9a90f16fb7b",
+            "id": "eba0616e3eb7eb5c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tài nguyên học tập - Topic 1 Tổng quan HTML5 & Bài tập thực hành.md",
+                "file": "t_ng_h_p_ki_n_th_c_html5_n_ng_cao.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Tài nguyên học tập - Topic 1 Tổng quan HTML5 & Bài tập thực hành"
+              "title": "t_ng_h_p_ki_n_th_c_html5_n_ng_cao"
             }
           }
         ]
@@ -196,8 +196,10 @@
       "bases:Tạo cơ sở mới": false
     }
   },
-  "active": "8604f9a90f16fb7b",
+  "active": "eba0616e3eb7eb5c",
   "lastOpenFiles": [
+    "t_ng_h_p_ki_n_th_c_html5_n_ng_cao.md",
+    "HTML5 Semantic Elements.md",
     "Tài nguyên học tập - Topic 1 Tổng quan HTML5 & Bài tập thực hành.md",
     "Tai lieu hoc tap - Pro Angular Toan dien.md",
     "Tổng quan về môn học.md",
