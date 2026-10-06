@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 1 - Thiết kế trang web theo mẫu Breakeven</title>
+  <link rel="stylesheet" href="bai1.css">
+  <style>
+    /* Reset & Base fallback */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f5f5;
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      width: 1000px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 1. Header: 1000px x 120px, Red background */
+    header.header {
+      width: 1000px;
+      height: 120px;
+      background-color: #b50d0d;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .header .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .header nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .header nav ul li a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    /* 2. Main Container: 1000px = 700px content + 300px sidebar */
+    .main-container {
+      width: 1000px;
+      display: flex;
+      min-height: 450px;
+    }
+
+    .content-area {
+      width: 700px;
+      padding: 35px 40px;
+    }
+
+    .content-area h1 {
+      font-size: 26px;
+      color: #444444;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .content-area .featured-image {
+      width: 100%;
+      margin-bottom: 22px;
+    }
+
+    .content-area .featured-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .content-area .description {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.7;
+    }
+
+    .sidebar {
+      width: 300px;
+      background-color: #f0f0f0;
+      padding: 35px 30px;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      color: #333333;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .sidebar ul.category-list {
+      list-style: none;
+    }
+
+    .sidebar ul.category-list li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul.category-list li a {
+      color: #777777;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s, padding-left 0.2s;
+      display: inline-block;
+    }
+
+    .sidebar ul.category-list li a:hover {
+      color: #b50d0d;
+      padding-left: 4px;
+    }
+
+    /* 3. Footer: 1000px x 90px, Red background */
+    footer.footer {
+      width: 1000px;
+      height: 90px;
+      background-color: #b50d0d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    footer.footer p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Layout Wrapper: Cố định 1000px theo mẫu -->
+  <div class="wrapper">
+    <!-- Header: Chiều cao 120px, Nền đỏ -->
+    <header class="header">
+      <div class="logo">BREAKEVENT</div>
+      <nav>
+        <ul>
+          <li><a href="#homepage">Homepage</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content Area: 1000px = 700px (Content) + 300px (Sidebar) -->
+    <div class="main-container">
+      <!-- Cột trái 700px -->
+      <main class="content-area">
+        <h1>Welcome to Breakeven</h1>
+        <div class="featured-image">
+          <img src="images/building.jpg" alt="Breakeven building facade">
+        </div>
+        <p class="description">
+          This is Breakeven, a free, fully standards-compliant CSS template designed by <strong>TEMPLATED</strong>. The photos in this template are from <strong>Fotogrph</strong>.
+        </p>
+      </main>
+
+      <!-- Cột phải 300px: Nền xám #f0f0f0 -->
+      <aside class="sidebar">
+        <h2>Categories</h2>
+        <ul class="category-list">
+          <li><a href="#cat1">Category 1</a></li>
+          <li><a href="#cat2">Category 2</a></li>
+          <li><a href="#cat3">Category 3</a></li>
+          <li><a href="#cat4">Category 4</a></li>
+          <li><a href="#cat5">Category 5</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- Footer: Chiều cao 90px, Nền đỏ -->
+    <footer class="footer">
+      <p>&copy; Untitled. All rights reserved. Images by Fotogrph. Design by TEMPLATED.</p>
+    </footer>
+  </div>
+
+</body>
+</html>

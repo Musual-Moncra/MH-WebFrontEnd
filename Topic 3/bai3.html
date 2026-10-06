@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 3 - Thiết kế layout trang web (Tutorial Republic)</title>
+  <style>
+    /* Reset & Base Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f7f9fa;
+      color: #333;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .exercise-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    /* Website Layout Container */
+    .web-layout {
+      width: 100%;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      border: 1px solid #d1d5db;
+    }
+
+    /* Header */
+    .header {
+      background-color: #668e9e;
+      padding: 16px 22px;
+    }
+
+    .header h1 {
+      font-size: 22px;
+      font-weight: bold;
+      color: #172b35;
+      letter-spacing: 0.2px;
+    }
+
+    /* Middle Container: Two-column layout */
+    .main-body {
+      display: flex;
+      min-height: 200px;
+    }
+
+    /* Left Sidebar */
+    .sidebar {
+      width: 170px;
+      background-color: #bcccd7;
+      padding: 18px 20px;
+      flex-shrink: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 8px;
+    }
+
+    .sidebar ul li a {
+      color: #0056b3;
+      text-decoration: underline;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+
+    .sidebar ul li a:hover {
+      color: #002e62;
+    }
+
+    /* Right Main Content */
+    .content {
+      flex: 1;
+      background-color: #eeeeee;
+      padding: 20px 24px;
+    }
+
+    .content h2 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    .content p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #668e9e;
+      padding: 11px 20px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 13px;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+
+    /* Responsive adjustments for mobile screens */
+    @media (max-width: 600px) {
+      .main-body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="exercise-title">Bài 3 : Thiết kế trang web với layout như bên dưới</div>
+
+    <!-- Website Layout -->
+    <div class="web-layout">
+      <!-- Header -->
+      <header class="header">
+        <h1>Tutorial Republic</h1>
+      </header>
+
+      <!-- Middle: Sidebar + Content -->
+      <div class="main-body">
+        <aside class="sidebar">
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <main class="content">
+          <h2>Welcome to our site</h2>
+          <p>Here you will learn to create websites...</p>
+        </main>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>copyright &copy; tutorialrepublic.com</p>
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>

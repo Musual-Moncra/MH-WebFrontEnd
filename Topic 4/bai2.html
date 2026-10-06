@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 2 - Thiết kế trang web theo mẫu Company Name</title>
+  <link rel="stylesheet" href="bai2.css">
+  <style>
+    /* Reset & Base fallback */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #e9ecef;
+      color: #555555;
+      line-height: 1.6;
+    }
+
+    .page-container {
+      width: 960px;
+      margin: 25px auto;
+      background-color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    /* 1. Top Header: Company Name & Slogan */
+    .top-header {
+      padding: 30px 40px 20px 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      background-color: #ffffff;
+    }
+
+    .brand-box {
+      text-align: right;
+    }
+
+    .brand-box h1.company-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #8dba51;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .brand-box p.company-slogan {
+      font-size: 11px;
+      color: #a5a5a5;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    /* 2. Navigation Bar */
+    nav.main-nav {
+      background: #8dba51;
+      padding: 0 15px;
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav.main-nav ul li a {
+      display: block;
+      padding: 13px 22px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    nav.main-nav ul li a:hover,
+    nav.main-nav ul li a.active {
+      background-color: #78a33d;
+    }
+
+    /* 3. Banner Image */
+    .banner-wrapper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .banner-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 4. Content Area (2 columns) */
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 35px 35px 45px 35px;
+      gap: 35px;
+    }
+
+    .main-column {
+      flex: 1;
+      max-width: 590px;
+    }
+
+    .main-column h2.post-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #222222;
+      margin-bottom: 5px;
+    }
+
+    .main-column .post-meta {
+      font-size: 11px;
+      color: #888888;
+      margin-bottom: 18px;
+    }
+
+    .main-column .post-image {
+      border: 1px solid #d5d5d5;
+      padding: 4px;
+      background-color: #ffffff;
+      margin-bottom: 18px;
+    }
+
+    .main-column .post-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .main-column .post-body p {
+      font-size: 13px;
+      color: #666666;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+
+    .main-column .post-body a {
+      color: #6fa33b;
+      text-decoration: none;
+    }
+
+    .main-column .post-body a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sidebar Column */
+    .sidebar-column {
+      width: 260px;
+      flex-shrink: 0;
+    }
+
+    .login-box {
+      margin-bottom: 35px;
+    }
+
+    .login-box h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 12px;
+    }
+
+    .login-form .form-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 9px;
+    }
+
+    .login-form .form-row label {
+      font-size: 13px;
+      color: #444444;
+    }
+
+    .login-form .form-row input[type="text"],
+    .login-form .form-row input[type="password"] {
+      width: 145px;
+      padding: 3px 6px;
+      border: 1px solid #cccccc;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .login-form .form-row input:focus {
+      border-color: #8dba51;
+    }
+
+    .login-form .btn-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 6px;
+    }
+
+    .login-form .btn-login {
+      background-color: #f7f7f7;
+      border: 1px solid #b5b5b5;
+      color: #333333;
+      padding: 2px 14px;
+      font-size: 12px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    .login-form .btn-login:hover {
+      background-color: #e5e5e5;
+    }
+
+    /* Sidebar Menu */
+    .sidebar-menu-box h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #222222;
+      margin-bottom: 16px;
+    }
+
+    .sidebar-menu-box ul {
+      list-style: none;
+    }
+
+    .sidebar-menu-box ul li {
+      margin-bottom: 12px;
+    }
+
+    .sidebar-menu-box ul li a {
+      color: #6fa33b;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.15s, padding-left 0.15s;
+      display: inline-block;
+    }
+
+    .sidebar-menu-box ul li a:hover {
+      color: #4e7824;
+      padding-left: 3px;
+    }
+
+    /* 5. Footer */
+    footer.page-footer {
+      background-color: #8dba51;
+      padding: 16px 20px;
+      text-align: center;
+    }
+
+    footer.page-footer p {
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Khung bao bọc trang web -->
+  <div class="page-container">
+    <!-- Header trên cùng: Tên công ty & Khẩu hiệu căn phải -->
+    <header class="top-header">
+      <div class="brand-box">
+        <h1 class="company-title">COMPANY NAME</h1>
+        <p class="company-slogan">PUT YOUR SLOGAN HERE</p>
+      </div>
+    </header>
+
+    <!-- Thanh menu điều hướng màu xanh lá -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Banner hình ảnh bàn phím & mầm cây xanh -->
+    <div class="banner-wrapper">
+      <img src="images/banner.jpg" alt="Company Banner - Computer Keyboard with Leaf Key">
+    </div>
+
+    <!-- Thân trang chia 2 cột -->
+    <div class="content-wrapper">
+      <!-- Cột trái: Bài viết -->
+      <main class="main-column">
+        <article>
+          <h2 class="post-title">Template License</h2>
+          <div class="post-meta">
+            March 16, 2010 | Posted by Owner | Filed under templates, internet
+          </div>
+
+          <div class="post-image">
+            <img src="images/thumb.jpg" alt="Apple on keyboard">
+          </div>
+
+          <div class="post-body">
+            <p>
+              This is a free CSS website template by <a href="#">HotWebsiteTemplates.net</a>. This work is distributed under the Creative Commons Attribution 3.0 License, which means that you are free to use it for any personal or commercial purpose provided you credit me in the form of a link back to HotWebsiteTemplates.net.
+            </p>
+            <p>
+              This is a free CSS website template by <a href="#">HotWebsiteTemplates.net</a>. This work is distributed under the Creative Commons Attribution 3.0 License, which means that you are free to use it for any personal or commercial purpose provided you credit me in the form of a link back to HotWebsiteTemplates.net.
+            </p>
+          </div>
+        </article>
+      </main>
+
+      <!-- Cột phải: Sidebar gồm Login & Menu -->
+      <aside class="sidebar-column">
+        <!-- Khung Login -->
+        <div class="login-box">
+          <h3>Login</h3>
+          <form class="login-form" action="#" method="post">
+            <div class="form-row">
+              <label for="username">User name</label>
+              <input type="text" id="username" name="username">
+            </div>
+            <div class="form-row">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password">
+            </div>
+            <div class="btn-row">
+              <button type="submit" class="btn-login">Login</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Khung Sidebar Menu -->
+        <div class="sidebar-menu-box">
+          <h3>Sidebar Menu</h3>
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#blog1">Blog</a></li>
+              <li><a href="#blog2">Blog</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer bản quyền màu xanh lá -->
+    <footer class="page-footer">
+      <p>&copy; Copyright MyWebSite</p>
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+/* ========================================================
+   BÀI TẬP TUẦN 4 - BÀI 1: BREAKEVENT CSS TEMPLATE
+   Kích thước tiêu chuẩn theo yêu cầu:
+   - Độ rộng tổng thể container: 1000px
+   - Header: cao 120px, nền đỏ #b50d0d
+   - Content: rộng 1000px (Main: 700px, Sidebar: 300px)
+   - Sidebar: nền xám #f0f0f0
+   - Footer: cao 90px, nền đỏ #b50d0d
+   ======================================================== */
+
+/* Reset cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Thanh điều hướng quay lại danh mục nếu cần (phục vụ học tập) */
+.top-notice {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 8px 15px;
+  font-size: 13px;
+}
+
+.top-notice a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.top-notice a:hover {
+  text-decoration: underline;
+}
+
+/* Khung chứa chính cố định 1000px theo đúng yêu cầu đề bài */
+.wrapper {
+  width: 1000px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================================
+   1. HEADER: Cao 120px, Nền đỏ, Logo + Menu
+   ======================================================== */
+header.header {
+  width: 1000px;
+  height: 120px;
+  background-color: #b50d0d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+/* Logo Breakeven */
+.header .logo {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Menu điều hướng */
+.header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.header nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.header nav ul li a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ========================================================
+   2. MAIN CONTAINER: Tổng 1000px (700px + 300px)
+   ======================================================== */
+.main-container {
+  width: 1000px;
+  display: flex;
+  min-height: 450px;
+}
+
+/* Cột nội dung chính bên trái: 700px */
+.content-area {
+  width: 700px;
+  padding: 35px 40px;
+}
+
+.content-area h1 {
+  font-size: 26px;
+  color: #444444;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 0.2px;
+}
+
+.content-area .featured-image {
+  width: 100%;
+  margin-bottom: 22px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.content-area .featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content-area .description {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.7;
+}
+
+.content-area .description strong {
+  color: #444444;
+}
+
+/* Cột Sidebar bên phải: 300px, nền xám #f0f0f0 */
+.sidebar {
+  width: 300px;
+  background-color: #f0f0f0;
+  padding: 35px 30px;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  color: #333333;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.sidebar ul.category-list {
+  list-style: none;
+}
+
+.sidebar ul.category-list li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul.category-list li a {
+  color: #777777;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s, padding-left 0.2s;
+  display: inline-block;
+}
+
+.sidebar ul.category-list li a:hover {
+  color: #b50d0d;
+  padding-left: 4px;
+}
+
+/* ========================================================
+   3. FOOTER: Cao 90px, Nền đỏ, Căn giữa nội dung
+   ======================================================== */
+footer.footer {
+  width: 1000px;
+  height: 90px;
+  background-color: #b50d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+footer.footer p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+footer.footer p a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer.footer p a:hover {
+  text-decoration: underline;
+}
